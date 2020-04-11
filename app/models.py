@@ -5,13 +5,13 @@ db = SQLAlchemy()
 
 class User(db.Model):
 	__tablename__ = 'users'
-	id = db.Column('id', db.Integer, primary_key = True)
-	user_id = db.Column('user_id', db.String(160), unique = True)
+	id = db.Column('id', db.Integer, primary_key=True)
+	user_id = db.Column('user_id', db.String(160), unique=True, nullable=False))
 	firstname = db.Column('firstname', db.String(160))
 	lastname = db.Column('lastname', db.String(160))
-	email = db.Column('email', db.String(160), unique = True)
+	email = db.Column('email', db.String(160), unique=True, nullable=False))
 	about = db.Column('about', db.String(355))
-	pwdhash = db.Column('pwdhash', db.String(355))
+	pwdhash = db.Column('pwdhash', db.String(355), nullable=False)
 	created_on = db.Column('created_on', db.DateTime())
 	last_login = db.Column('last_login', db.DateTime())
 
